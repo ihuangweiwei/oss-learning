@@ -1,0 +1,7 @@
+# 两个子 super-project 各自是独立仓库（不进根仓库）
+ai/
+java/
+
+# 本地中间产物
+scripts/*.log
+scripts/raw-manifest.tsv

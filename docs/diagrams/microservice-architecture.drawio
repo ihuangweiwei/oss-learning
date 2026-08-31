@@ -1,0 +1,61 @@
+<mxfile host="app.diagrams.net" modified="2026-08-31T00:00:00.000Z" agent="oss-learning" version="24.0.0" type="device">
+  <diagram id="ms-arch" name="企业微服务体系">
+    <mxGraphModel dx="1200" dy="850" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="960" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="L0" value="客户端 · 业务系统 · 外部流量" style="rounded=1;whiteSpace=wrap;fillColor=#f5f5f5;strokeColor=#666;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="40" y="20" width="1080" height="40" as="geometry" /></mxCell>
+        <mxCell id="L1" value="① 接入层 · API 网关" style="swimlane;horizontal=1;startSize=26;rounded=1;fillColor=#dae8fc;strokeColor=#6c8ebf;swimlaneLine=1;" vertex="1" parent="1"><mxGeometry x="40" y="80" width="1080" height="66" as="geometry" /></mxCell>
+        <mxCell id="C1a" value="Higress" style="rounded=1;whiteSpace=wrap;fillColor=#fff2cc;" vertex="1" parent="1"><mxGeometry x="60" y="112" width="130" height="28" as="geometry" /></mxCell>
+        <mxCell id="C1b" value="Apache ShenYu" style="rounded=1;whiteSpace=wrap;fillColor=#fff2cc;" vertex="1" parent="1"><mxGeometry x="210" y="112" width="130" height="28" as="geometry" /></mxCell>
+        <mxCell id="C1c" value="Spring Cloud Gateway" style="rounded=1;whiteSpace=wrap;fillColor=#fff2cc;" vertex="1" parent="1"><mxGeometry x="360" y="112" width="150" height="28" as="geometry" /></mxCell>
+        <mxCell id="C1d" value="Zuul 1.x（旧）" style="rounded=1;whiteSpace=wrap;fillColor=#eeeeee;" vertex="1" parent="1"><mxGeometry x="530" y="112" width="130" height="28" as="geometry" /></mxCell>
+        <mxCell id="L2" value="② 服务框架" style="swimlane;horizontal=1;startSize=26;rounded=1;fillColor=#dae8fc;strokeColor=#6c8ebf;swimlaneLine=1;" vertex="1" parent="1"><mxGeometry x="40" y="160" width="1080" height="66" as="geometry" /></mxCell>
+        <mxCell id="C2a" value="Spring Boot 3" style="rounded=1;whiteSpace=wrap;fillColor=#fff2cc;" vertex="1" parent="1"><mxGeometry x="60" y="192" width="130" height="28" as="geometry" /></mxCell>
+        <mxCell id="C2b" value="Dubbo 3" style="rounded=1;whiteSpace=wrap;fillColor=#fff2cc;" vertex="1" parent="1"><mxGeometry x="210" y="192" width="130" height="28" as="geometry" /></mxCell>
+        <mxCell id="C2c" value="Quarkus" style="rounded=1;whiteSpace=wrap;fillColor=#fff2cc;" vertex="1" parent="1"><mxGeometry x="360" y="192" width="130" height="28" as="geometry" /></mxCell>
+        <mxCell id="C2d" value="Micronaut" style="rounded=1;whiteSpace=wrap;fillColor=#fff2cc;" vertex="1" parent="1"><mxGeometry x="510" y="192" width="130" height="28" as="geometry" /></mxCell>
+        <mxCell id="C2e" value="Armeria" style="rounded=1;whiteSpace=wrap;fillColor=#fff2cc;" vertex="1" parent="1"><mxGeometry x="660" y="192" width="130" height="28" as="geometry" /></mxCell>
+        <mxCell id="C2f" value="Helidon / Vert.x" style="rounded=1;whiteSpace=wrap;fillColor=#fff2cc;" vertex="1" parent="1"><mxGeometry x="810" y="192" width="140" height="28" as="geometry" /></mxCell>
+        <mxCell id="L3" value="③ 注册 · 配置中心" style="swimlane;horizontal=1;startSize=26;rounded=1;fillColor=#dae8fc;strokeColor=#6c8ebf;swimlaneLine=1;" vertex="1" parent="1"><mxGeometry x="40" y="240" width="1080" height="66" as="geometry" /></mxCell>
+        <mxCell id="C3a" value="Nacos" style="rounded=1;whiteSpace=wrap;fillColor=#fff2cc;" vertex="1" parent="1"><mxGeometry x="60" y="272" width="130" height="28" as="geometry" /></mxCell>
+        <mxCell id="C3b" value="Apollo" style="rounded=1;whiteSpace=wrap;fillColor=#fff2cc;" vertex="1" parent="1"><mxGeometry x="210" y="272" width="130" height="28" as="geometry" /></mxCell>
+        <mxCell id="C3c" value="ZooKeeper（学习）" style="rounded=1;whiteSpace=wrap;fillColor=#eeeeee;" vertex="1" parent="1"><mxGeometry x="360" y="272" width="150" height="28" as="geometry" /></mxCell>
+        <mxCell id="L4" value="④ 服务治理 · 熔断/限流/降级" style="swimlane;horizontal=1;startSize=26;rounded=1;fillColor=#dae8fc;strokeColor=#6c8ebf;swimlaneLine=1;" vertex="1" parent="1"><mxGeometry x="40" y="320" width="1080" height="66" as="geometry" /></mxCell>
+        <mxCell id="C4a" value="Sentinel" style="rounded=1;whiteSpace=wrap;fillColor=#fff2cc;" vertex="1" parent="1"><mxGeometry x="60" y="352" width="130" height="28" as="geometry" /></mxCell>
+        <mxCell id="C4b" value="Resilience4j" style="rounded=1;whiteSpace=wrap;fillColor=#fff2cc;" vertex="1" parent="1"><mxGeometry x="210" y="352" width="130" height="28" as="geometry" /></mxCell>
+        <mxCell id="C4c" value="Hystrix（旧）" style="rounded=1;whiteSpace=wrap;fillColor=#eeeeee;" vertex="1" parent="1"><mxGeometry x="360" y="352" width="130" height="28" as="geometry" /></mxCell>
+        <mxCell id="L5" value="⑤ 数据层 · 分库分表 / 同步 / 分布式事务" style="swimlane;horizontal=1;startSize=26;rounded=1;fillColor=#dae8fc;strokeColor=#6c8ebf;swimlaneLine=1;" vertex="1" parent="1"><mxGeometry x="40" y="400" width="1080" height="66" as="geometry" /></mxCell>
+        <mxCell id="C5a" value="ShardingSphere" style="rounded=1;whiteSpace=wrap;fillColor=#fff2cc;" vertex="1" parent="1"><mxGeometry x="60" y="432" width="130" height="28" as="geometry" /></mxCell>
+        <mxCell id="C5b" value="dynamic-datasource" style="rounded=1;whiteSpace=wrap;fillColor=#fff2cc;" vertex="1" parent="1"><mxGeometry x="210" y="432" width="150" height="28" as="geometry" /></mxCell>
+        <mxCell id="C5c" value="canal" style="rounded=1;whiteSpace=wrap;fillColor=#fff2cc;" vertex="1" parent="1"><mxGeometry x="380" y="432" width="130" height="28" as="geometry" /></mxCell>
+        <mxCell id="C5d" value="Seata" style="rounded=1;whiteSpace=wrap;fillColor=#fff2cc;" vertex="1" parent="1"><mxGeometry x="530" y="432" width="130" height="28" as="geometry" /></mxCell>
+        <mxCell id="C5e" value="分布式 ID" style="rounded=1;whiteSpace=wrap;fillColor=#fff2cc;" vertex="1" parent="1"><mxGeometry x="680" y="432" width="130" height="28" as="geometry" /></mxCell>
+        <mxCell id="L6" value="⑥ 基础中间件 · 缓存/消息/任务" style="swimlane;horizontal=1;startSize=26;rounded=1;fillColor=#dae8fc;strokeColor=#6c8ebf;swimlaneLine=1;" vertex="1" parent="1"><mxGeometry x="40" y="480" width="1080" height="66" as="geometry" /></mxCell>
+        <mxCell id="C6a" value="Caffeine" style="rounded=1;whiteSpace=wrap;fillColor=#fff2cc;" vertex="1" parent="1"><mxGeometry x="60" y="512" width="130" height="28" as="geometry" /></mxCell>
+        <mxCell id="C6b" value="RocketMQ" style="rounded=1;whiteSpace=wrap;fillColor=#fff2cc;" vertex="1" parent="1"><mxGeometry x="210" y="512" width="130" height="28" as="geometry" /></mxCell>
+        <mxCell id="C6c" value="Pulsar" style="rounded=1;whiteSpace=wrap;fillColor=#fff2cc;" vertex="1" parent="1"><mxGeometry x="360" y="512" width="130" height="28" as="geometry" /></mxCell>
+        <mxCell id="C6d" value="xxl-job" style="rounded=1;whiteSpace=wrap;fillColor=#fff2cc;" vertex="1" parent="1"><mxGeometry x="510" y="512" width="130" height="28" as="geometry" /></mxCell>
+        <mxCell id="L7" value="⑦ 可观测 · APM/监控/链路" style="swimlane;horizontal=1;startSize=26;rounded=1;fillColor=#dae8fc;strokeColor=#6c8ebf;swimlaneLine=1;" vertex="1" parent="1"><mxGeometry x="40" y="560" width="1080" height="66" as="geometry" /></mxCell>
+        <mxCell id="C7a" value="SkyWalking" style="rounded=1;whiteSpace=wrap;fillColor=#fff2cc;" vertex="1" parent="1"><mxGeometry x="60" y="592" width="130" height="28" as="geometry" /></mxCell>
+        <mxCell id="C7b" value="CAT" style="rounded=1;whiteSpace=wrap;fillColor=#fff2cc;" vertex="1" parent="1"><mxGeometry x="210" y="592" width="130" height="28" as="geometry" /></mxCell>
+        <mxCell id="C7c" value="Prometheus" style="rounded=1;whiteSpace=wrap;fillColor=#fff2cc;" vertex="1" parent="1"><mxGeometry x="360" y="592" width="130" height="28" as="geometry" /></mxCell>
+        <mxCell id="C7d" value="Grafana" style="rounded=1;whiteSpace=wrap;fillColor=#fff2cc;" vertex="1" parent="1"><mxGeometry x="510" y="592" width="130" height="28" as="geometry" /></mxCell>
+        <mxCell id="L8" value="⑧ 安全认证" style="swimlane;horizontal=1;startSize=26;rounded=1;fillColor=#dae8fc;strokeColor=#6c8ebf;swimlaneLine=1;" vertex="1" parent="1"><mxGeometry x="40" y="640" width="1080" height="66" as="geometry" /></mxCell>
+        <mxCell id="C8a" value="Sa-Token" style="rounded=1;whiteSpace=wrap;fillColor=#fff2cc;" vertex="1" parent="1"><mxGeometry x="60" y="672" width="130" height="28" as="geometry" /></mxCell>
+        <mxCell id="C8b" value="xxl-sso" style="rounded=1;whiteSpace=wrap;fillColor=#fff2cc;" vertex="1" parent="1"><mxGeometry x="210" y="672" width="130" height="28" as="geometry" /></mxCell>
+        <mxCell id="C8c" value="OAuth2 / Spring Security" style="rounded=1;whiteSpace=wrap;fillColor=#fff2cc;" vertex="1" parent="1"><mxGeometry x="360" y="672" width="180" height="28" as="geometry" /></mxCell>
+        <mxCell id="L9" value="⑨ 云原生 · 运行时" style="swimlane;horizontal=1;startSize=26;rounded=1;fillColor=#dae8fc;strokeColor=#6c8ebf;swimlaneLine=1;" vertex="1" parent="1"><mxGeometry x="40" y="720" width="1080" height="66" as="geometry" /></mxCell>
+        <mxCell id="C9a" value="Dapr" style="rounded=1;whiteSpace=wrap;fillColor=#fff2cc;" vertex="1" parent="1"><mxGeometry x="60" y="752" width="130" height="28" as="geometry" /></mxCell>
+        <mxCell id="C9b" value="Kubernetes" style="rounded=1;whiteSpace=wrap;fillColor=#fff2cc;" vertex="1" parent="1"><mxGeometry x="210" y="752" width="130" height="28" as="geometry" /></mxCell>
+        <mxCell id="C9c" value="原生镜像(GraalVM)" style="rounded=1;whiteSpace=wrap;fillColor=#fff2cc;" vertex="1" parent="1"><mxGeometry x="360" y="752" width="160" height="28" as="geometry" /></mxCell>
+        <mxCell id="L10" value="⑩ AI 赋能（可选叠加）" style="swimlane;horizontal=1;startSize=26;rounded=1;fillColor=#d5e8d4;strokeColor=#82b366;swimlaneLine=1;" vertex="1" parent="1"><mxGeometry x="40" y="800" width="1080" height="66" as="geometry" /></mxCell>
+        <mxCell id="C10a" value="Spring AI" style="rounded=1;whiteSpace=wrap;fillColor=#fff2cc;" vertex="1" parent="1"><mxGeometry x="60" y="832" width="130" height="28" as="geometry" /></mxCell>
+        <mxCell id="C10b" value="LangChain 系" style="rounded=1;whiteSpace=wrap;fillColor=#fff2cc;" vertex="1" parent="1"><mxGeometry x="210" y="832" width="130" height="28" as="geometry" /></mxCell>
+        <mxCell id="C10c" value="RAG(Dify/RAGFlow)" style="rounded=1;whiteSpace=wrap;fillColor=#fff2cc;" vertex="1" parent="1"><mxGeometry x="360" y="832" width="170" height="28" as="geometry" /></mxCell>
+        <mxCell id="C10d" value="Agent(OpenCode/CrewAI)" style="rounded=1;whiteSpace=wrap;fillColor=#fff2cc;" vertex="1" parent="1"><mxGeometry x="550" y="832" width="190" height="28" as="geometry" /></mxCell>
+        <mxCell id="B1" value="赋能业务：客服 · 研发提效 · 知识库 · 数据智能 · 内容生成" style="rounded=1;whiteSpace=wrap;fillColor=#f8cecc;strokeColor=#b85450;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="40" y="886" width="1080" height="40" as="geometry" /></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
