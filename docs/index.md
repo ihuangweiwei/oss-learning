@@ -74,10 +74,10 @@ title: oss-learning · AI 驱动的开源学习与技术选型
   企业蓝图 + drawio 架构图 + 云生态分析；技术雷达上线；自维护 skill + 每晚/每周定时任务；README 全面重写；根仓库建站。
 - 历史：一期完成 ai/java 两个 super-project 同步与清单化（manifest.tsv）。
 
-## 🔗 源码仓库
+## 🔗 源码仓库（各自独立 GitHub Pages）
 
-| 仓库 | 说明 |
-|---|---|
-| `oss-learning` | 本页 + 文档 + 脚本 + skill（根仓库） |
-| `oss-learning-ai` | 企业 AI 平台技术栈（78 子模块） |
-| `oss-learning-java` | 企业微服务技术栈（235 子模块） |
+| 仓库 | 说明 | GitHub Pages |
+|---|---|---|
+| `oss-learning` | 本页 + 文档 + 脚本 + skill（根仓库） | [本站](https://ihuangweiwei.github.io/oss-learning/) |
+| `oss-learning-ai` | 企业 AI 平台技术栈（78 子模块） | [AI 平台站](https://ihuangweiwei.github.io/oss-learning-ai/) |
+| `oss-learning-java` | 企业微服务技术栈（235 子模块） | [微服务站](https://ihuangweiwei.github.io/oss-learning-java/) |
