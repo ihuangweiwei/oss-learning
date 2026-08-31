@@ -2,7 +2,7 @@
 
 > **AI 驱动的开源学习 + 技术选型 + 企业级平台落地** 自维护仓库
 >
-> 用 git submodule 同步 **~316 个**高质量开源项目；AI 每晚/每周自动扫描 GitHub 新框架、
+> 用 git submodule 同步 **~303 个**高质量开源项目；AI 每晚/每周自动扫描 GitHub 新框架、
 > 审阅引入、沉淀蓝图与文档、自动提 issue —— 把"学开源"变成"AI 自行规划技术栈"。
 
 ---
@@ -13,7 +13,7 @@
 |---|---|---|
 | 🤖 **技术雷达** | 多维度自动扫 GitHub 新框架/飙升项目（主题 + 关键词 + 跨主题飙升榜，无标签黑马也能抓到） | `scripts/watch-trending.py` → `docs/tech-watch/` |
 | 📡 **AI 情报站** | 每日快讯 + 飙升盘点 + 专题收藏（编辑把关 + 流量策略） | `docs/intel/` |
-| 🧩 **开源合集** | ~316 个开源项目，按 ai / java 两套 super-project 组织，跟随上游 latest | `ai/` · `java/` |
+| 🧩 **开源合集** | ~303 个开源项目，按 ai / java 两套 super-project 组织，跟随上游 latest | `ai/` · `java/` |
 | 🏭 **企业微服务蓝图** | 10 层企业微服务架构 + 落地路线图 + 技术选型速查 | `docs/enterprise-microservice-blueprint.md` + drawio |
 | 🚀 **企业 AI 平台蓝图** | 8 层 AI 平台（AI 网关→模型→RAG→Agent→MCP→技能→平台工程→变现） | `docs/enterprise-ai-platform-blueprint.md` + drawio |
 | 📦 **技能资产** | 把"维护方法论 + 全部需求"沉淀为可复用 skill | `.claude/skills/oss-learning-maintainer/SKILL.md` |
@@ -25,7 +25,7 @@
 ```
 oss-learning/
 ├── ai/      # 企业级 AI 平台技术栈（~78 个子模块：Agent/Framework/RAG/Skills/Models/Applications…）
-├── java/    # 企业级微服务技术栈（~235 个子模块：Spring/Distributed/Middleware/BigData/Examples/Go…）
+├── java/    # 企业级微服务技术栈（~224 个子模块：Spring/Distributed/Middleware/BigData/Examples/Go…）
 ├── scripts/
 │   ├── manifest.tsv        # 唯一事实源：super/category/name/origin
 │   ├── watch-trending.py   # 技术雷达：扫 GitHub 新框架 → 候选报告
@@ -70,7 +70,7 @@ python scripts/watch-trending.py --days 180
 
 ## 网络说明（本机 Clash 代理场景）
 
-- 子模块 URL 记录为上游原始 SSH 地址；**GitHub** 经 https+代理（`http.proxy=127.0.0.1:7897`），**Gitee** 走 SSH 直连。
+- 子模块 URL 为上游原始地址；**Java 集已全转 GitHub**（90 个 gitee 子模块换 GitHub 镜像、11 个无镜像废弃），确保 GitHub Pages 递归 checkout 构建通过。GitHub 经 https+代理（`http.proxy=127.0.0.1:7897`）。
 - 脚本通过 `GIT_CONFIG_COUNT/KEY/VALUE` 注入反向规则（GitHub `ssh→https`、Gitee `https→ssh`），并带 `core.longpaths=true`（绕开 Windows 260 字符路径限制）。
 - **注意**：不修改全局 `url.git@github.com:.insteadof` 规则，只在脚本/会话内生效。
 

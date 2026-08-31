@@ -17,7 +17,7 @@ title: oss-learning · AI 驱动的开源学习与技术选型
 
 | 指标 | 值 |
 |---|---|
-| 开源项目合集 | **~316 个**（ai 79 + java 235） |
+| 开源项目合集 | **~303 个**（ai 79 + java 224） |
 | 企业微服务蓝图 | 10 层架构 + 4 阶段路线图 |
 | 企业 AI 平台蓝图 | 8 层架构 + 4 阶段路线图 |
 | 技术雷达 | 每晚自动扫描 GitHub 新框架 |
@@ -84,4 +84,4 @@ title: oss-learning · AI 驱动的开源学习与技术选型
 |---|---|---|
 | `oss-learning` | 本页 + 文档 + 脚本 + skill（根仓库） | [本站](https://ihuangweiwei.github.io/oss-learning/) |
 | `oss-learning-ai` | 企业 AI 平台技术栈（78 子模块） | [AI 平台站](https://ihuangweiwei.github.io/oss-learning-ai/) |
-| `oss-learning-java` | 企业微服务技术栈（235 子模块） | [微服务站](https://ihuangweiwei.github.io/oss-learning-java/) |
+| `oss-learning-java` | 企业微服务技术栈（224 子模块） | [微服务站](https://ihuangweiwei.github.io/oss-learning-java/) |
