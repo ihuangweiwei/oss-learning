@@ -7,7 +7,7 @@ title: oss-learning · AI 驱动的开源学习与技术选型
 
 **AI 驱动的开源学习 · 技术选型 · 企业级平台落地 · 流量变现**
 
-> 用 git submodule 同步 **~300 个高质量开源项目**，AI 每晚/每周自动扫描 GitHub 新框架、
+> 用 git submodule 同步 **~315 个高质量开源项目**，AI 每晚/每周自动扫描 GitHub 新框架、
 > 审阅引入、沉淀蓝图与文档、自动提 issue —— 把"学开源"变成"AI 自行规划技术栈"。
 > 技术赋能企业，最终为了赚钱：**企业落地 / 接单交付 / 流量变现** 三条变现链路。
 
@@ -17,7 +17,7 @@ title: oss-learning · AI 驱动的开源学习与技术选型
 
 | 指标 | 值 |
 |---|---|
-| 开源项目合集 | **~300 个**（ai 77 + java 225+） |
+| 开源项目合集 | **~315 个**（ai 78 + java 235） |
 | 企业微服务蓝图 | 10 层架构 + 4 阶段路线图 |
 | 企业 AI 平台蓝图 | 8 层架构 + 4 阶段路线图 |
 | 技术雷达 | 每晚自动扫描 GitHub 新框架 |
@@ -28,16 +28,18 @@ title: oss-learning · AI 驱动的开源学习与技术选型
 
 | | 能力 | 入口 |
 |---|---|---|
-| 🤖 | **技术雷达**：自动扫 GitHub 新框架/飙升项目 | `scripts/watch-trending.py` → `docs/tech-watch/` |
-| 🧩 | **开源合集**：ai（企业 AI 平台栈）+ java（微服务栈） | `ai/` · `java/` |
-| 🏭 | **企业微服务蓝图**：网关→框架→注册→治理→数据→中间件→可观测→安全→云原生→AI | [蓝图](enterprise-microservice-blueprint.md) · [架构图](../diagrams/microservice-architecture.drawio) |
-| 🚀 | **企业 AI 平台蓝图**：AI 网关→模型→RAG→Agent→工具/MCP→技能→平台工程→变现 | [蓝图](enterprise-ai-platform-blueprint.md) · [架构图](../diagrams/ai-platform.drawio) |
+| 🤖 | **技术雷达**：自动扫 GitHub 新框架/飙升项目 | [雷达报告](tech-watch/2026-08-31.md) |
+| 🧩 | **开源合集**：ai（企业 AI 平台栈）+ java（微服务栈 + 接单项目 + 云生态） | `ai/` · `java/`（独立仓库） |
+| 🏭 | **企业微服务蓝图**：网关→框架→注册→治理→数据→中间件→可观测→安全→云原生→AI | [蓝图](enterprise-microservice-blueprint.md) · [架构图](diagrams/microservice-architecture.drawio) |
+| 🚀 | **企业 AI 平台蓝图**：AI 网关→模型→RAG→Agent→工具/MCP→技能→平台工程→变现 | [蓝图](enterprise-ai-platform-blueprint.md) · [架构图](diagrams/ai-platform.drawio) |
+| ☁️ | **云平台生态分析**：阿里/腾讯/华为/AWS/微软/CNCF 开源生态映射 | [云生态](cloud-ecosystem.md) |
 | 💰 | **变现链路**：企业落地 / 接单项目（小程序商城·后台·低代码）/ 短视频·文生图 | `ai/Applications` · `java/Examples` |
+| 📦 | **自维护 skill**：全部方法论与需求沉淀 | [skill 入口](skills/) |
 | 📝 | **自动提 issue**：候选新框架用模板提 issue | `.github/ISSUE_TEMPLATE/tech-candidate.md` |
 
 ## 📅 技术雷达（最新）
 
-最新候选报告：`docs/tech-watch/`（每晚更新）。近期亮点：
+最新候选报告：`tech-watch/`（每晚更新）。近期亮点：
 
 - **OpenMontage** ⭐54k —— 开源智能视频制作系统（AI 短视频）
 - **DeepSeek-Reasonix** ⭐35k —— DeepSeek 原生终端编程 Agent
@@ -50,8 +52,9 @@ title: oss-learning · AI 驱动的开源学习与技术选型
 
 - [企业微服务落地蓝图](enterprise-microservice-blueprint.md)
 - [企业 AI 平台落地蓝图](enterprise-ai-platform-blueprint.md)
-- [自维护 Skill（全部方法论与需求）](../.claude/skills/oss-learning-maintainer/SKILL.md)
-- [设计文档与实施说明](../superpowers/specs/2026-08-30-oss-learning-design.md)
+- [云平台生态分析](cloud-ecosystem.md)
+- [自维护 Skill（全部方法论与需求）](skills/)
+- [设计文档与实施说明](superpowers/specs/2026-08-30-oss-learning-design.md)
 
 ## 🔄 如何自维护（AI 自驱动）
 
@@ -62,13 +65,13 @@ title: oss-learning · AI 驱动的开源学习与技术选型
 - **每晚 22:47**：轻量雷达 + 更新本页更新日志 + 推送。
 - **每周日 20:03**：完整循环（雷达、审阅、查重、引入、更新蓝图/README/架构图、提 issue、推送）。
 - **经典不删**：老技术保留用于学习，只引入新时代。
-- 复刻方法：读 `oss-learning-maintainer` skill，按"快速开始"跑一次完整循环。
+- 复刻方法：读 [oss-learning-maintainer skill](skills/)，按"快速开始"跑一次完整循环。
 
 ## 📝 更新日志
 
-- **2026-08-31**：二期启动——新增 ai Applications（短视频/文生图/PCB）、Agent 新框架、Skills 技能库；
-  企业蓝图 + drawio 架构图；技术雷达上线；自维护 skill + 每晚/每周定时任务；README 全面重写；
-  CoPaw→qwenpaw 改名；MetaGPT 修正。java 新增 quarkus/micronaut/armeria/helidon/spring-ai 等。
+- **2026-08-31**：二期启动——新增 ai Applications（短视频/文生图/PCB）、Agent 新框架、Skills 技能库、modelscope；
+  java 新增微服务框架 + 6 接单项目（newbee-mall/mall4j/mall4cloud/jeecg-boot/RuoYi-Vue-Plus）+ 5 云生态（etcd/kubeedge/openGauss/openGemini/Tars）；
+  企业蓝图 + drawio 架构图 + 云生态分析；技术雷达上线；自维护 skill + 每晚/每周定时任务；README 全面重写；根仓库建站。
 - 历史：一期完成 ai/java 两个 super-project 同步与清单化（manifest.tsv）。
 
 ## 🔗 源码仓库
@@ -76,5 +79,5 @@ title: oss-learning · AI 驱动的开源学习与技术选型
 | 仓库 | 说明 |
 |---|---|
 | `oss-learning` | 本页 + 文档 + 脚本 + skill（根仓库） |
-| `oss-learning-ai` | 企业 AI 平台技术栈（65+ 子模块） |
-| `oss-learning-java` | 企业微服务技术栈（225 子模块） |
+| `oss-learning-ai` | 企业 AI 平台技术栈（78 子模块） |
+| `oss-learning-java` | 企业微服务技术栈（235 子模块） |
