@@ -33,13 +33,15 @@ oss-learning/
 ├── java/                # 企业级微服务技术栈（子模块集合）
 ├── scripts/
 │   ├── manifest.tsv     # 唯一事实源：super<TAB>category<TAB>name<TAB>origin
-│   ├── watch-trending.py    # 技术雷达：扫 GitHub 新框架 → docs/tech-watch/<date>.md
+│   ├── watch-trending.py    # 技术雷达：多维度扫 GitHub 新框架 → docs/tech-watch/<date>.md
 │   ├── add-submodules.sh    # 按 manifest 批量 add 子模块
 │   └── build-manifest.sh    # 重建 manifest（含排除规则）
 ├── docs/
 │   ├── enterprise-microservice-blueprint.md   # 微服务落地蓝图
 │   ├── enterprise-ai-platform-blueprint.md    # 企业 AI 平台蓝图
-│   ├── tech-watch/<date>.md                   # 雷达候选报告
+│   ├── tech-watch/<date>.md                   # 雷达候选报告（多维度）
+│   ├── intel/<date>.md                        # AI 情报站：每日快讯（AI 撰写，遵守编辑方针）
+│   ├── intel/index.md                        # 情报站枢纽页（快讯索引 + 专题 + 编辑方针 + 流量策略）
 │   └── diagrams/*.drawio                      # 分层架构图（draw.io 可编辑）
 ├── .claude/skills/       # 本 skill（沉淀的维护方法论）
 └── .github/ISSUE_TEMPLATE/tech-candidate.md   # AI/用户提"新技术候选"issue 的模板
@@ -50,16 +52,24 @@ oss-learning/
 整个循环是一个闭环，**每次运行都输出可感知的增量**：
 
 ```
-雷达扫描 → AI 审阅候选 → 引入仓库 → 沉淀文档 → 提 issue → 提交推送 → 更新官方页/wiki
+雷达扫描 → AI 审阅候选 → 引入仓库 → 沉淀文档 → 情报站快讯 → 提 issue → 提交推送 → 更新官方页/wiki
 ```
 
-### Step 1 · 技术雷达扫描
+### Step 1 · 技术雷达扫描（多维度）
 
 ```bash
 cd oss-learning && python scripts/watch-trending.py --days 180
-# 产物：docs/tech-watch/YYYY-MM-DD.md（分类候选表：AI/Agent、Skills/MCP、Java、视频变现、RAG）
-# 可选 GITHUB_TOKEN 提升限额（未登录 ~7s/次，全程约 2 分钟）
+# 产物：docs/tech-watch/YYYY-MM-DD.md（三维度候选表）
+# 可选 GITHUB_TOKEN 提升限额（未登录 ~7s/次，全程约 3 分钟）
 ```
+
+雷达是**多维度**的（2026-08-31 起，堵"只搜 topic"盲区）：
+
+- **维度① 主题标签 topic**：按分类查 `topic:X created:>N`。
+- **维度② 关键词**：`X created:>N` 查名称/描述，兜住**没打标签**的仓库。
+- **维度③ 跨主题飙升榜**：`created:>N stars:>2000` 按 ⭐ 排序、**不限 topic**——专门抓不按常理打标签的黑马（教训：`andrewyng/openworker` ⭐17k 但 `topics:[]`，单靠 topic 搜索会漏）。
+
+报告每行带「标签」列，`-` = 无 topic 的黑马（重点看）。
 
 ### Step 2 · AI 审阅候选（关键决策步）
 
@@ -90,6 +100,27 @@ git -C <super> submodule status | grep '^-'   # 应无未初始化
 - **drawio 架构图**：docs/diagrams/ 下按分层加 swimlane + 组件框。
 - **wiki / 官方页**：GitHub Pages 站引用蓝图与雷达；wiki 放"如何自维护"说明。
 
+### Step 4.5 · AI 情报站每日快讯（写作方向把关）
+
+雷达跑完后，AI 撰写当日快讯 `docs/intel/YYYY-MM-DD.md` 并更新 `docs/intel/index.md` 索引。**写作方向必须把关**，遵守固定编辑方针：
+
+1. **有选型价值**：读者看完能回答"我该不该用"。禁止纯罗列/凑数/填日期。
+2. **快讯格式固定**：① 头条（1–2 条真正有增量：新模型/新框架/重大发布）→ ② 飙升项目盘点（带 ⭐、为什么涨、适合谁）→ ③ 本期接入清单（manifest 新增）→ ④ 变现提示（结尾：企业落地 / 接单 / 流量）。
+3. **信息可验证**：⭐、license、owner、日期必须真实（来自 GitHub API/页面），不写"感觉值"。
+4. **观点有依据**：说"值得关注"必须给理由（场景/生态/赚钱链路）；不标题党、不夸大数字。
+5. **结尾挂三条变现链路**：赋能企业 / 接单交付 / 流量内容。
+
+**流量策略**（情报站是流量盘子，别只当技术笔记）：
+
+| 受众 | 内容 | 渠道 |
+|---|---|---|
+| 找 AI/开源新框架的开发者 | 技术雷达 · 每日快讯 | GitHub、掘金、知乎 |
+| 企业架构师 / 技术决策者 | 微服务蓝图 · AI 平台蓝图 | 搜索引擎长尾、公众号 |
+| 想做副业/接单的人 | 接单项目盘点 · 变现路径 | 掘金、知乎、公众号 |
+| 备战面试的人 | 技术面试小册（二期项目） | 掘金、GitHub、公众号 |
+
+运营节奏：每日快讯 → 每周《开源精选》汇总 → 每月《AI 开源月报》。Pages 当**内容仓库**，公众号/掘金当**分发渠道**。
+
 ### Step 5 · 自动提 issue
 
 用 `.github/ISSUE_TEMPLATE/tech-candidate.md` 模板，把候选/计划整理成 issue：
@@ -112,7 +143,10 @@ git -C oss-learning add -A && git -C oss-learning commit -m "chore: <日期> 文
 
 | 历史需求 | 落地产物 |
 |---|---|
-| 去 GitHub 看新框架、自我学习、自动技术选型 | `watch-trending.py` 雷达 + 每轮引入 |
+| 去 GitHub 看新框架、自我学习、自动技术选型 | `watch-trending.py` 雷达（多维度）+ 每轮引入 |
+| "从各个维度去找各种项目"（雷达曾漏掉无 topic 的 openworker） | 雷达升级为三维度：topic + 关键词 + 跨主题飙升榜（不限 topic），报告带「标签」列标注黑马 |
+| 弄个 AI 情报站、GitHub Pages 里加栏目 | `docs/intel/`（枢纽页 + 每日快讯），Pages 首页挂「情报站」入口 |
+| 自己想想打造哪些流量、写作方向把关 | 情报站「编辑方针 + 流量策略」（见 index.md 与 Step 4.5） |
 | AI 自动提 issue | `.github/ISSUE_TEMPLATE/tech-candidate.md` + Step 5 |
 | 企业级落地、赋能企业/业务、提效 | 两份蓝图 + 两张 drawio 架构图 |
 | 经典不删、只引入新时代 | 只追加 manifest 行，不删除旧模块 |
@@ -135,7 +169,8 @@ git -C oss-learning add -A && git -C oss-learning commit -m "chore: <日期> 文
 
 - **网络**：Clash 127.0.0.1:7897；改 URL 只在本脚本/会话内用 `GIT_CONFIG_COUNT=5` 环境块，**禁止改全局 insteadOf**。
 - **Windows**：控制台别打印 emoji（GBK 报错）；深路径删除用 `cmd //c rmdir //s //q "\\\\?\\..."`。
-- **GitHub API**：OR 链 + 日期限定易 422/403，雷达按"每 topic 单查"最稳；未登录限 10 次/分。
+- **GitHub API**：OR 链 + 日期限定易 422/403，雷达按"每个查询单查"最稳；未登录限 10 次/分。
+- **雷达盲区**：`topic:` 搜索只命中**打了标签**的仓库——openworker（17k⭐、`topics:[]`）就是因此漏掉的。所以雷达必须多维度（topic + 关键词 + 跨主题飙升），且报告要标注"无标签黑马"。
 - **子模块**：改名注意 gitlink 与 .gitmodules 同步；吸收/移动用 `git submodule absorbgitdirs`。
 - **不要**为了"显得活跃"乱引入低质项目；保持"赋能/引流/学习"三价值取向。
 
@@ -143,10 +178,11 @@ git -C oss-learning add -A && git -C oss-learning commit -m "chore: <日期> 文
 
 ```bash
 cd /d/MyWorkSpace/oss-learning
-python scripts/watch-trending.py --days 180        # 1 雷达
-# 2 审阅 docs/tech-watch/<today>.md  → 挑选候选
+python scripts/watch-trending.py --days 180        # 1 多维度雷达
+# 2 审阅 docs/tech-watch/<today>.md  → 挑选候选（「标签」列为 - 的是无 topic 黑马，重点看）
 # 3 追加 manifest.tsv → bash scripts/add-submodules.sh ai  (或 java)
 # 4 更新 README / 蓝图 / 官方页
+# 4.5 写情报站快讯 docs/intel/<today>.md + 更新 docs/intel/index.md 索引（遵守编辑方针）
 # 5 按模板提 issue
 # 6 commit + push 三个仓库
 # 7 汇报本周增量

@@ -5,3 +5,6 @@ java/
 # 本地中间产物
 scripts/*.log
 scripts/raw-manifest.tsv
+scripts/__pycache__/
+**/__pycache__/
+*.pyc

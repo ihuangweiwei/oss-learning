@@ -7,13 +7,14 @@
 
 | Skill | 路径 | 说明 |
 |---|---|---|
-| **oss-learning-maintainer** | `.claude/skills/oss-learning-maintainer/SKILL.md` | 全自动维护方法论：技术雷达→AI 审阅→引入→文档/蓝图→issue→推送→官方页；沉淀了全部历史需求（技术选型/自我学习/企业落地/接单/短视频·文生图·PCB/流量变现/经典不删/每晚每周自完善） |
+| **oss-learning-maintainer** | `.claude/skills/oss-learning-maintainer/SKILL.md` | 全自动维护方法论：多维度技术雷达→AI 审阅→引入→文档/蓝图→**情报站快讯**→issue→推送→官方页；沉淀全部历史需求（技术选型/自我学习/企业落地/接单/短视频·文生图·PCB/流量变现/情报站/经典不删/每晚每周自完善） |
 
 ## 维护循环（速览）
 
 ```
-雷达扫描(watch-trending.py) → AI 审阅候选(查重 manifest.tsv)
+雷达扫描(watch-trending.py, 多维度) → AI 审阅候选(查重 manifest.tsv)
 → 引入仓库(add-submodules.sh) → 沉淀文档(README/蓝图/drawio)
+→ 情报站快讯(docs/intel/<date>.md, 遵守编辑方针)
 → 提 issue(tech-candidate.md) → 提交推送 → 更新官方页
 ```
 

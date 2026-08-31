@@ -28,7 +28,8 @@ title: oss-learning · AI 驱动的开源学习与技术选型
 
 | | 能力 | 入口 |
 |---|---|---|
-| 🤖 | **技术雷达**：自动扫 GitHub 新框架/飙升项目 | [雷达报告](tech-watch/2026-08-31.md) |
+| 🤖 | **技术雷达**：自动扫 GitHub 新框架/飙升项目（多维度：topic + 关键词 + 跨主题飙升） | [雷达报告](tech-watch/2026-08-31.md) |
+| 📡 | **AI 情报站**：每日快讯 + 飙升盘点 + 专题收藏（编辑把关 + 流量策略） | [情报站](intel/index.md) |
 | 🧩 | **开源合集**：ai（企业 AI 平台栈）+ java（微服务栈 + 接单项目 + 云生态） | `ai/` · `java/`（独立仓库） |
 | 🏭 | **企业微服务蓝图**：网关→框架→注册→治理→数据→中间件→可观测→安全→云原生→AI | [蓝图](enterprise-microservice-blueprint.md) · [架构图](diagrams/microservice-architecture.drawio) |
 | 🚀 | **企业 AI 平台蓝图**：AI 网关→模型→RAG→Agent→工具/MCP→技能→平台工程→变现 | [蓝图](enterprise-ai-platform-blueprint.md) · [架构图](diagrams/ai-platform.drawio) |
@@ -39,17 +40,20 @@ title: oss-learning · AI 驱动的开源学习与技术选型
 
 ## 📅 技术雷达（最新）
 
-最新候选报告：`tech-watch/`（每晚更新）。近期亮点：
+最新候选报告：`tech-watch/`（每晚更新）+ [AI 情报站每日快讯](intel/index.md)。近期亮点：
 
+- **deepseek-harness** ⭐205k —— DeepSeek "Everything is a Plugin" 工具链（2026-08-13 新建）
+- **claw-code** ⭐195k —— Rust 写的 agent 基础设施（无 topic 黑马，多维度雷达抓获）
+- **openworker** ⭐17k —— Andrew Ng 出品，无 topic 黑马，雷达升级后引入（见[快讯](intel/2026-08-31.md)）
 - **OpenMontage** ⭐54k —— 开源智能视频制作系统（AI 短视频）
 - **DeepSeek-Reasonix** ⭐35k —— DeepSeek 原生终端编程 Agent
 - **融光 ai-fusion-video** —— 基于 Agent 的全流程 AI 短剧/漫剧创作（Java）
 - **ReachAI** —— 企业级智能体改造 OA/ERP/CRM（赋能企业）
 - **caveman** ⭐101k —— Claude Code 技能（省 token）
-- **khazix-skills** ⭐20k —— 社区 AI 技能合集
 
 ## 📖 文档
 
+- [AI 情报站（每日快讯 · 专题 · 编辑方针）](intel/index.md)
 - [企业微服务落地蓝图](enterprise-microservice-blueprint.md)
 - [企业 AI 平台落地蓝图](enterprise-ai-platform-blueprint.md)
 - [云平台生态分析](cloud-ecosystem.md)
