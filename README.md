@@ -11,8 +11,9 @@
 
 | 能力 | 说明 | 入口 |
 |---|---|---|
-| 🤖 **技术雷达** | 自动扫 GitHub 新框架/飙升项目（AI/Agent、Skills/MCP、Java 微服务、短视频、RAG） | `scripts/watch-trending.py` → `docs/tech-watch/` |
-| 🧩 **开源合集** | ~315 个开源项目，按 ai / java 两套 super-project 组织，跟随上游 latest | `ai/` · `java/` |
+| 🤖 **技术雷达** | 多维度自动扫 GitHub 新框架/飙升项目（主题 + 关键词 + 跨主题飙升榜，无标签黑马也能抓到） | `scripts/watch-trending.py` → `docs/tech-watch/` |
+| 📡 **AI 情报站** | 每日快讯 + 飙升盘点 + 专题收藏（编辑把关 + 流量策略） | `docs/intel/` |
+| 🧩 **开源合集** | ~316 个开源项目，按 ai / java 两套 super-project 组织，跟随上游 latest | `ai/` · `java/` |
 | 🏭 **企业微服务蓝图** | 10 层企业微服务架构 + 落地路线图 + 技术选型速查 | `docs/enterprise-microservice-blueprint.md` + drawio |
 | 🚀 **企业 AI 平台蓝图** | 8 层 AI 平台（AI 网关→模型→RAG→Agent→MCP→技能→平台工程→变现） | `docs/enterprise-ai-platform-blueprint.md` + drawio |
 | 📦 **技能资产** | 把"维护方法论 + 全部需求"沉淀为可复用 skill | `.claude/skills/oss-learning-maintainer/SKILL.md` |
@@ -32,7 +33,8 @@ oss-learning/
 │   └── build-manifest.sh   # 重建 manifest（含排除规则）
 ├── docs/
 │   ├── enterprise-*-blueprint.md     # 企业级落地蓝图（微服务 + AI 平台）
-│   ├── tech-watch/<date>.md          # 雷达候选报告（每日更新）
+│   ├── tech-watch/<date>.md          # 雷达候选报告（多维度，每日更新）
+│   ├── intel/<date>.md               # AI 情报站每日快讯（AI 撰写）
 │   └── diagrams/*.drawio             # 分层架构图（draw.io 可编辑）
 ├── .claude/skills/oss-learning-maintainer/   # 自维护 skill
 └── .github/ISSUE_TEMPLATE/                    # 技术候选 issue 模板
@@ -47,9 +49,9 @@ git clone --recursive <your>/oss-learning-java.git java
 # 更新到上游最新（有变更自动提交）
 ./sync-all.sh
 
-# 跑一次技术雷达（扫描近 180 天 GitHub 新框架）
+# 跑一次技术雷达（多维度扫描近 180 天 GitHub 新框架/飙升项目）
 python scripts/watch-trending.py --days 180
-# → 审阅 docs/tech-watch/YYYY-MM-DD.md，挑选候选引入
+# → 审阅 docs/tech-watch/YYYY-MM-DD.md + AI 情报站 docs/intel/，挑选候选引入
 ```
 
 ## 自动维护（AI 自驱动）
@@ -76,7 +78,7 @@ python scripts/watch-trending.py --days 180
 
 | 脚本 | 作用 |
 |------|------|
-| `scripts/watch-trending.py` | 技术雷达：扫描近 N 天 GitHub 新框架/飙升项目，生成候选报告 |
+| `scripts/watch-trending.py` | 技术雷达：多维度扫描近 N 天 GitHub 新框架/飙升项目（主题 + 关键词 + 跨主题飙升速度榜），生成候选报告 |
 | `scripts/scan.sh` | 扫描本机学习目录生成 `raw-manifest.tsv` |
 | `scripts/build-manifest.sh` | 去重 + 排除 + 分类，生成 `manifest.tsv` |
 | `scripts/add-submodules.sh <ai\|java>` | 按清单批量 `git submodule add`（重试/超时/锁） |
