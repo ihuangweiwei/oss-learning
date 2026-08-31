@@ -311,3 +311,4 @@ java	BigData	openGauss	git@github.com:opengauss/openGauss.git
 java	BigData	openGemini	git@github.com:openGemini/openGemini.git
 java	Distributed	tars	git@github.com:TarsCloud/Tars.git
 ai	Framework	modelscope	git@github.com:modelscope/modelscope.git
+ai	Agent	openworker	git@github.com:andrewyng/openworker.git
