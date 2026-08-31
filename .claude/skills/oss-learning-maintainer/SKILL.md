@@ -172,6 +172,8 @@ git -C oss-learning add -A && git -C oss-learning commit -m "chore: <日期> 文
 - **GitHub API**：OR 链 + 日期限定易 422/403，雷达按"每个查询单查"最稳；未登录限 10 次/分。
 - **雷达盲区**：`topic:` 搜索只命中**打了标签**的仓库——openworker（17k⭐、`topics:[]`）就是因此漏掉的。所以雷达必须多维度（topic + 关键词 + 跨主题飙升），且报告要标注"无标签黑马"。
 - **子模块**：改名注意 gitlink 与 .gitmodules 同步；吸收/移动用 `git submodule absorbgitdirs`。
+- **GitHub Pages 与子模块**：Pages「Deploy from a branch」会**递归 checkout 子模块**——gitee SSH 子模块直接构建失败（Host key verification failed）；全 GitHub 子模块太多（79/224 个）也会超时/失败。**所以 ai/java 仓库的 Pages 必须用 GitHub Actions 工作流（`.github/workflows/pages.yml`，`submodules: false`），站点只构建根目录静态内容**。三个站点：oss-learning（分支构建 · docs/）、oss-learning-ai / oss-learning-java（Actions 工作流）。
+- **gitee 子模块迁移**：`scripts/gitee-to-github.py` 按 `java/gitee-mapping.tsv` 解析 gitee 子模块到 GitHub 镜像（`git ls-remote` 验证存在才接受）；无镜像标 DELETED。2026-08-31 已完成：90 个换 GitHub、11 个废弃（java 235→224 子模块）。注意 ls-remote 可能瞬断误判，DELETED 前对可疑项多试候选 owner（didi→didi、elunez→elunez、ityouknow→ityouknow、J2Cache→oschina）。
 - **不要**为了"显得活跃"乱引入低质项目；保持"赋能/引流/学习"三价值取向。
 
 ## 7. 快速开始（一次完整循环）
